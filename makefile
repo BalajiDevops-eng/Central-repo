@@ -1,8 +1,8 @@
-all:
-    chmod +x add.sh
+CC = gcc
+CFLAGS = -Wall -Werror
+
+add: add.c
+    $(CC) $(CFLAGS) add.c -o add
 
 clean:
-    rm -f add.sh
-
-run:
-    ./add.sh
+    rm -f add add.c~

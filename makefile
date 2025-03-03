@@ -1,6 +1,8 @@
 all:
-    chmod +x hello.sh
-    ./hello.sh
+    chmod +x add.sh
 
 clean:
-    rm -f *.sh
+    rm -f add.sh
+
+run:
+    ./add.sh

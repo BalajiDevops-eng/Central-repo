@@ -1,14 +1,17 @@
-#!/bin/bash
+#include <stdio.h>
 
-# Get the two numbers from the user
-echo "Enter the first number:"
-read num1
+int main() {
+    int num1, num2, sum;
 
-echo "Enter the second number:"
-read num2
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
 
-# Calculate the sum
-sum=$((num1 + num2))
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
 
-# Print the result
-echo "The sum is: $sum"
+    sum = num1 + num2;
+
+    printf("The sum is: %d\n", sum);
+
+    return 0;
+}

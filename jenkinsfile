@@ -1,0 +1,39 @@
+```
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building..."'
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo "Testing..."'
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying..."'
+                sh 'mvn deploy'
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'echo "Cleaning up..."'
+            sh 'mvn clean'
+        }
+        success {
+            sh 'echo "Build successful!"'
+        }
+        failure {
+            sh 'echo "Build failed!"'
+        }
+    }
+}
+```

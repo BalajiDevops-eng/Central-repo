@@ -8,10 +8,19 @@ pipeline {
             }
         }
 	stage('Test') {
+	parallel {
+	stage ('unit test') {
 	steps {
-		sh 'echo "Testing..."'
+		sh 'echo "Unit Testing..."'
             }
         }
+	stage('integration test') {
+	steps {
+		sh 'echo "Integration testing..."'
+		    }
+	        }
+	    }
+	}
 	stage('Deploy') {
 	steps {
 		sh 'echo "Deploying..."'

@@ -41,16 +41,3 @@ pipeline {
             }
         }
     }
-    post {
-        failure {
-            mail to: 'balajishesha1996@gmail.com.com',
-                 subject: 'Build Failed: My Project',
-                 body: 'Please check the Jenkins logs for more details.'
-        }
-        success {
-            mail to: 'your-email@example.com',
-                 subject: 'Build Success: My Project',
-                 body: 'Build successful. Please verify the deployment.'
-        }
-    }
-}

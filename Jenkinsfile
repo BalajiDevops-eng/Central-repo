@@ -32,13 +32,5 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                sshagent(credentials: ['your-ssh-credentials']) {
-                    sh 'scp target/your-app.jar your-username@your-dev-server:/path/to/deploy'
-                    sh 'ssh your-username@your-dev-server /path/to/restart-app.sh'
-                }
-            }
-        }
     }
 }
